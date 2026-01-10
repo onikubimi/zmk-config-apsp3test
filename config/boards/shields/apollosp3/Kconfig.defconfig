@@ -1,4 +1,16 @@
 if SHIELD_APOLLOSP3
+
+config ZMK_KEYBOARD_NAME
+        default "ApolloSP3"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+        default y
+
+endif
+
+
+if SHIELD_APOLLOSP3
 config ZMK_SPLIT
     default n
+
 endif
