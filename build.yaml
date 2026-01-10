@@ -1,3 +1,3 @@
 include:
   - board: nice_nano
-    shield: apollosp3_left
+    shield: apollosp3
