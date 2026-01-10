@@ -1,0 +1,14 @@
+file_format: "1"
+id: apollosp3
+name: ApolloSP3
+type: shield
+requires:
+  - pro_micro
+features:
+  - keys
+siblings:
+  - apollosp3
+boards:
+  - nice_nano_v2
+  - nice_nano
+  - pro_micro
