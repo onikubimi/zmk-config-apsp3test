@@ -1,2 +1,2 @@
-config SHIELD_APOLLOSP3_LEFT
-    def_bool $(shields_list_contains,apollosp3_left)
+config SHIELD_APOLLOSP3
+    def_bool $(shields_list_contains,apollosp3)
