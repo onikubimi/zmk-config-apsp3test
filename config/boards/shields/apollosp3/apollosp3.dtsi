@@ -1,9 +1,11 @@
+
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
+        zmk,physical-layout = &physical_layout0;
     };
 
     default_transform: key_transform_0 {
@@ -18,19 +20,26 @@
         >;
     };
 
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "ApolloSP3";
+        transform = <&default_transform>; 
+    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row"; // ※もし反応しなければ row2col に変えます
+        wakeup-source;
+        diode-direction = "col2row";
         row-gpios
-            = <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row_0 (006)
-            , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row_1 (100)
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row_2 (113)
-            , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // Row_3 (104)
+            = <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         col-gpios
-            = <&gpio0 24 GPIO_ACTIVE_HIGH> // Col_0 (024)
-            , <&gpio0 11 GPIO_ACTIVE_HIGH> // Col_1 (011)
-            , <&gpio1 11 GPIO_ACTIVE_HIGH> // Col_2 (111)
-            , <&gpio0 2  GPIO_ACTIVE_HIGH> // Col_3 (002)
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>; // Col_4 (115)
+            = <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>
+            , <&gpio0 2  GPIO_ACTIVE_HIGH>
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>;
     };
 };
