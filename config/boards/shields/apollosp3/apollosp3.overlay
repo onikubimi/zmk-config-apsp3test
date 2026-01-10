@@ -1,0 +1,7 @@
+#include "apollosp3.dtsi"
+
+/ {
+    /* もし apollosp3.dtsi 側に chosen や kscan をすべて書いているなら、
+       このファイルは include するだけで動きます。
+    */
+};
